@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}
+Error | WeatherPro
+{% endblock %}
+
+{% block content %}
+
+<div class="error-container">
+
+    <div class="error-card">
+
+        <div class="error-emoji">
+            ⚠️
+        </div>
+
+        <h1>Oops!</h1>
+
+        <h3>Something went wrong</h3>
+
+        <p>
+
+            We couldn't process your request.
+
+            The city may not exist, the weather service may be
+            temporarily unavailable, or an unexpected error occurred.
+
+        </p>
+
+        <div class="error-actions">
+
+            <a href="{{ url_for('home') }}"
+               class="primary-btn">
+
+                🏠 Back to Home
+
+            </a>
+
+            <a href="javascript:history.back()"
+               class="secondary-btn">
+
+                🔄 Try Again
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

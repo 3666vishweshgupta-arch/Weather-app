@@ -1,0 +1,43 @@
+.cloud{
+
+    position:absolute;
+
+    top:80px;
+
+    width:250px;
+
+    opacity:.3;
+
+    animation:moveClouds 60s linear infinite;
+
+}
+
+.cloud:nth-child(2){
+
+    top:170px;
+    animation-duration:80s;
+
+}
+
+.cloud:nth-child(3){
+
+    top:280px;
+    animation-duration:100s;
+
+}
+
+@keyframes moveClouds{
+
+    from{
+
+        left:-300px;
+
+    }
+
+    to{
+
+        left:110%;
+
+    }
+
+}

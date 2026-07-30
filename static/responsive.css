@@ -1,0 +1,301 @@
+/* ===================================================
+   WeatherPro Responsive Design
+=================================================== */
+
+/* Large Tablets */
+
+@media (max-width:1200px){
+
+    .container{
+
+        width:95%;
+
+        margin:auto;
+
+    }
+
+    .weather-card{
+
+        padding:30px;
+
+    }
+
+    .temperature{
+
+        font-size:4.5rem;
+
+    }
+
+}
+
+/* Tablets */
+
+@media (max-width:992px){
+
+    .weather-card{
+
+        padding:25px;
+
+    }
+
+    .weather-stats{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:18px;
+
+    }
+
+    .forecast-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .hourly-grid{
+
+        grid-template-columns:repeat(3,1fr);
+
+    }
+
+    .temperature{
+
+        font-size:4rem;
+
+    }
+
+    .city{
+
+        font-size:1.8rem;
+
+    }
+
+}
+
+/* Small Tablets */
+
+@media (max-width:768px){
+
+    .container{
+
+        width:95%;
+
+        padding:10px;
+
+    }
+
+    .weather-card{
+
+        padding:22px;
+
+        border-radius:22px;
+
+    }
+
+    .weather-stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .forecast-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .hourly-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .temperature{
+
+        font-size:3.5rem;
+
+    }
+
+    .city{
+
+        font-size:1.6rem;
+
+    }
+
+    .description{
+
+        font-size:1rem;
+
+    }
+
+    .weather-icon{
+
+        width:100px;
+
+    }
+
+    table{
+
+        display:block;
+
+        overflow-x:auto;
+
+        white-space:nowrap;
+
+    }
+
+}
+
+/* Mobile */
+
+@media (max-width:576px){
+
+    body{
+
+        font-size:15px;
+
+    }
+
+    .container{
+
+        width:100%;
+
+        padding:8px;
+
+    }
+
+    .weather-card{
+
+        padding:18px;
+
+    }
+
+    .temperature{
+
+        font-size:3rem;
+
+    }
+
+    .city{
+
+        font-size:1.4rem;
+
+    }
+
+    .description{
+
+        font-size:.95rem;
+
+    }
+
+    .weather-icon{
+
+        width:90px;
+
+    }
+
+    .hourly-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .forecast-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .info-card{
+
+        padding:15px;
+
+    }
+
+    .stat{
+
+        padding:15px;
+
+    }
+
+    button{
+
+        width:100%;
+
+    }
+
+    input{
+
+        width:100%;
+
+    }
+
+}
+
+/* Small Mobile */
+
+@media (max-width:400px){
+
+    .temperature{
+
+        font-size:2.5rem;
+
+    }
+
+    .city{
+
+        font-size:1.2rem;
+
+    }
+
+    .weather-card{
+
+        padding:15px;
+
+        border-radius:18px;
+
+    }
+
+    .weather-icon{
+
+        width:75px;
+
+    }
+
+    h1{
+
+        font-size:1.5rem;
+
+    }
+
+    h2{
+
+        font-size:1.3rem;
+
+    }
+
+    h3{
+
+        font-size:1.1rem;
+
+    }
+
+}
+
+/* Landscape Phones */
+
+@media (max-height:500px){
+
+    .weather-card{
+
+        margin:10px auto;
+
+    }
+
+    .navbar{
+
+        position:relative;
+
+    }
+
+}

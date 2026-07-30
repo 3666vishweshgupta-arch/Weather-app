@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}
+Search History | WeatherPro
+{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+
+    <h1>🕘 Search History</h1>
+
+    <p>
+        View and manage your recently searched cities.
+    </p>
+
+</div>
+
+{% if history %}
+
+<div class="history-list">
+
+    {% for city in history %}
+
+    <div class="history-card">
+
+        <div class="history-left">
+
+            <div class="history-icon">
+                📍
+            </div>
+
+            <div>
+
+                <h2>{{ city }}</h2>
+
+                <p>Previously searched city</p>
+
+            </div>
+
+        </div>
+
+        <div class="history-buttons">
+
+            <a href="/?city={{ city }}" class="primary-btn">
+                🔍 Search Again
+            </a>
+
+            <a href="{{ url_for('add_favorite', city=city) }}"
+               class="secondary-btn">
+                ⭐ Favorite
+            </a>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+<div class="clear-history">
+
+    <a href="{{ url_for('clear_history') }}"
+       class="danger-btn">
+
+        🗑 Clear History
+
+    </a>
+
+</div>
+
+{% else %}
+
+<div class="empty-card">
+
+    <div class="error-icon">
+
+        🕘
+
+    </div>
+
+    <h2>
+
+        No Search History
+
+    </h2>
+
+    <p>
+
+        Search cities from the Home page and they'll appear here.
+
+    </p>
+
+    <br>
+
+    <a href="{{ url_for('home') }}"
+       class="primary-btn">
+
+        🏠 Go Home
+
+    </a>
+
+</div>
+
+{% endif %}
+
+{% endblock %}

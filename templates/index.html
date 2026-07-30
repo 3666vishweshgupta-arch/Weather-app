@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="hero">
+
+    <h1>🌤 WeatherPro</h1>
+
+    <p>
+        Beautiful real-time weather forecasts for every city,
+        powered by Open-Meteo.
+    </p>
+
+</section>
+
+
+<form method="POST" class="search-form">
+
+    <input
+        type="text"
+        name="city"
+        placeholder="🔍 Search any city..."
+        autocomplete="off"
+        required>
+
+    <button type="submit">
+        Search
+    </button>
+
+</form>
+
+
+{% if error %}
+
+<div class="error-page">
+
+    <div class="error-icon">
+        ❌
+    </div>
+
+    <h2>{{ error }}</h2>
+
+</div>
+
+{% endif %}
+
+
+{% if weather %}
+
+<div class="weather-card">
+    <h3 style="color:red;">Theme: {{ weather.theme }}</h3>
+
+    <div class="city-header">
+
+        <div>
+
+            <h2>
+                📍 {{ weather.city }}, {{ weather.country }}
+            </h2>
+
+            <p class="last-updated">
+                Updated just now
+            </p>
+
+        </div>
+
+        <a
+            href="{{ url_for('add_favorite', city=weather.city) }}"
+            class="primary-btn">
+
+            ⭐ Favorite
+
+        </a>
+
+    </div>
+
+
+    <div class="weather-header">
+
+        <div class="weather-icon">
+
+            {{ weather.icon }}
+
+        </div>
+
+        <h3>
+
+            {{ weather.condition }}
+
+        </h3>
+
+    </div>
+
+
+    <div class="temperature {{ weather.temp_class }}">
+
+        {{ weather.temperature }}°C
+
+    </div>
+
+
+    <div class="feels">
+
+        Feels Like
+        <strong>{{ weather.feels_like }}°C</strong>
+
+    </div>
+
+
+    <h2 style="margin:40px 0 25px;text-align:center;">
+
+        Today's Highlights
+
+    </h2>
+
+    <div class="weather-grid">
+</div>
+
+    </div>
+
+    <div class="weather-grid">
+
+        <div class="weather-box">
+    <h3>🌡️ Max Temperature</h3>
+    <p>{{ weather.max_temp }}°C</p>
+</div>
+
+<div class="weather-box">
+    <h3>❄️ Min Temperature</h3>
+    <p>{{ weather.min_temp }}°C</p>
+</div>
+
+<div class="weather-box">
+    <h3>💧 Humidity</h3>
+    <p>{{ weather.humidity }}%</p>
+</div>
+
+<div class="weather-box">
+    <h3>🌬 Wind Speed</h3>
+    <p>{{ weather.wind }} km/h</p>
+</div>
+
+<div class="weather-box">
+    <h3>📈 Pressure</h3>
+    <p>{{ weather.pressure }} hPa</p>
+</div>
+
+<div class="weather-box">
+    <h3>🌅 Sunrise</h3>
+    <p>{{ weather.sunrise }}</p>
+</div>
+
+<div class="weather-box">
+    <h3>🌇 Sunset</h3>
+    <p>{{ weather.sunset }}</p>
+</div>
+
+</div>
+
+<div class="action-section">
+
+    <a href="{{ url_for('forecast') }}" class="primary-btn">
+        📅 7-Day Forecast
+    </a>
+
+    <a href="{{ url_for('hourly') }}" class="secondary-btn">
+        ⏰ Hourly Forecast
+    </a>
+
+    <a href="{{ url_for('add_favorite', city=weather.city) }}" class="primary-btn">
+        ⭐ Save Favorite
+    </a>
+
+</div>
+
+</div>
+
+{% endif %}
+
+{% endblock %}

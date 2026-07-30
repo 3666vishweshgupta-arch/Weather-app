@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}
+7-Day Forecast | WeatherPro
+{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+
+    <h1>📅 7-Day Weather Forecast</h1>
+
+    <p>
+        Plan your week with accurate daily weather predictions.
+    </p>
+
+</div>
+
+<div class="forecast-page-grid">
+
+    {% for day in forecast %}
+
+    <div class="forecast-page-card">
+
+        <div class="forecast-icon">
+
+            {{ day.icon }}
+
+        </div>
+
+        <h2>
+
+            {{ day.day if day.day else day.date }}
+
+        </h2>
+
+        <p class="forecast-desc">
+
+            {{ day.description }}
+
+        </p>
+
+        <div class="forecast-temp">
+
+            <span class="max-temp">
+
+                🌡 {{ day.max }}°C
+
+            </span>
+
+            <span class="min-temp">
+
+                ❄ {{ day.min }}°C
+
+            </span>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+<div class="action-section" style="margin-top:40px;">
+
+    <a href="{{ url_for('home') }}" class="primary-btn">
+
+        🏠 Home
+
+    </a>
+
+    <a href="{{ url_for('hourly') }}" class="secondary-btn">
+
+        ⏰ Hourly Forecast
+
+    </a>
+
+</div>
+
+{% endblock %}

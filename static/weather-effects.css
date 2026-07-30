@@ -1,0 +1,283 @@
+/* ===================================================
+   WeatherPro Weather Effects
+=================================================== */
+
+/* Main Layer */
+
+.weather-effects{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:0;
+
+}
+
+/* ==========================
+   RAIN
+========================== */
+
+.rain{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+.rain::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-100% 0;
+
+    background-image:
+        repeating-linear-gradient(
+            -15deg,
+            transparent 0px,
+            transparent 14px,
+            rgba(255,255,255,.45) 15px,
+            rgba(255,255,255,.45) 17px
+        );
+
+    animation:rainFall .8s linear infinite;
+
+    opacity:.7;
+
+}
+
+/* ==========================
+   SNOW
+========================== */
+
+.snow{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+.snow::before{
+
+    content:"❄ ❅ ❆ ❄ ❅ ❆ ❄ ❅ ❆ ❄ ❅ ❆ ❄";
+
+    position:absolute;
+
+    left:-5%;
+
+    top:-20%;
+
+    width:110%;
+
+    font-size:22px;
+
+    color:white;
+
+    letter-spacing:40px;
+
+    animation:snowFall 10s linear infinite;
+
+    opacity:.8;
+
+}
+
+/* ==========================
+   LIGHTNING
+========================== */
+
+.lightning{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+.lightning::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:white;
+
+    opacity:0;
+
+    animation:lightningFlash 8s infinite;
+
+}
+
+/* ==========================
+   FOG
+========================== */
+
+.fog{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+.fog::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:160%;
+
+    height:100%;
+
+    left:-30%;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.15),
+        rgba(255,255,255,.22),
+        rgba(255,255,255,.15),
+        transparent
+    );
+
+    filter:blur(30px);
+
+    animation:fogDrift 18s ease-in-out infinite alternate;
+
+}
+
+/* ==========================
+   STARS
+========================== */
+
+.stars{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+.stars::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+    radial-gradient(circle, white 1px, transparent 2px);
+
+    background-size:60px 60px;
+
+    opacity:.5;
+
+    animation:twinkle 3s infinite;
+
+}
+
+/* ==========================
+   SUN GLOW
+========================== */
+
+.sun-glow{
+
+    position:absolute;
+
+    top:70px;
+
+    right:70px;
+
+    width:130px;
+
+    height:130px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        rgba(255,220,90,.95),
+
+        rgba(255,200,0,.2),
+
+        transparent
+
+    );
+
+    animation:sunGlow 4s ease-in-out infinite;
+
+}
+
+/* ==========================
+   CLOUDS
+========================== */
+
+.cloud-layer{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+.cloud-layer::before,
+
+.cloud-layer::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:280px;
+
+    height:90px;
+
+    border-radius:100px;
+
+    background:
+
+    rgba(255,255,255,.15);
+
+    filter:blur(10px);
+
+}
+
+.cloud-layer::before{
+
+    top:90px;
+
+    left:-320px;
+
+    animation:cloudMove 55s linear infinite;
+
+}
+
+.cloud-layer::after{
+
+    top:190px;
+
+    left:-450px;
+
+    animation:cloudMove 75s linear infinite;
+
+    opacity:.6;
+
+}

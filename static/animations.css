@@ -1,0 +1,294 @@
+/* ===================================================
+   WeatherPro Animations
+   Version : 2.0
+=================================================== */
+
+/* Fade */
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+/* Fade Up */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Fade Down */
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Slide Left */
+
+@keyframes slideLeft{
+    from{
+        opacity:0;
+        transform:translateX(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+/* Slide Right */
+
+@keyframes slideRight{
+    from{
+        opacity:0;
+        transform:translateX(-50px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+/* Floating */
+
+@keyframes floating{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+/* Pulse */
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.05);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+/* Glow */
+
+@keyframes glow{
+
+    0%{
+        box-shadow:0 0 10px rgba(255,255,255,.15);
+    }
+
+    50%{
+        box-shadow:0 0 30px rgba(255,255,255,.35);
+    }
+
+    100%{
+        box-shadow:0 0 10px rgba(255,255,255,.15);
+    }
+
+}
+
+/* Background Zoom */
+
+@keyframes backgroundZoom{
+
+    from{
+        background-size:100%;
+    }
+
+    to{
+        background-size:110%;
+    }
+
+}
+
+/* Rain */
+
+@keyframes rainFall{
+
+    from{
+        transform:translateY(-100vh);
+    }
+
+    to{
+        transform:translateY(110vh);
+    }
+
+}
+
+/* Snow */
+
+@keyframes snowFall{
+
+    from{
+        transform:
+        translateY(-100vh)
+        translateX(0);
+    }
+
+    to{
+        transform:
+        translateY(110vh)
+        translateX(60px);
+    }
+
+}
+
+/* Twinkle */
+
+@keyframes twinkle{
+
+    0%,100%{
+        opacity:.2;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+}
+
+/* Cloud Movement */
+
+@keyframes cloudMove{
+
+    from{
+        transform:translateX(-300px);
+    }
+
+    to{
+        transform:translateX(calc(100vw + 300px));
+    }
+
+}
+
+/* Fog Drift */
+
+@keyframes fogDrift{
+
+    from{
+        transform:translateX(-150px);
+    }
+
+    to{
+        transform:translateX(150px);
+    }
+
+}
+
+/* Sun Glow */
+
+@keyframes sunGlow{
+
+    0%{
+        box-shadow:
+        0 0 40px rgba(255,210,0,.4);
+    }
+
+    50%{
+        box-shadow:
+        0 0 80px rgba(255,210,0,.8);
+    }
+
+    100%{
+        box-shadow:
+        0 0 40px rgba(255,210,0,.4);
+    }
+
+}
+
+/* Lightning */
+
+@keyframes lightningFlash{
+
+    0%,95%,100%{
+        opacity:0;
+    }
+
+    96%{
+        opacity:.9;
+    }
+
+    97%{
+        opacity:0;
+    }
+
+    98%{
+        opacity:.6;
+    }
+
+}
+
+/* Card Hover */
+
+@keyframes cardHover{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-8px);
+    }
+
+}
+
+/* Rotate */
+
+@keyframes rotate{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+/* Bounce */
+
+@keyframes bounce{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+}

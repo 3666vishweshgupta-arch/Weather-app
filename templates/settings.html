@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block title %}
+Settings | WeatherPro
+{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+
+    <h1>⚙️ Settings</h1>
+
+    <p>
+        Information and configuration details for your WeatherPro application.
+    </p>
+
+</div>
+
+<div class="settings-grid">
+
+    <div class="settings-card">
+
+        <div class="settings-icon">
+            ⚙️
+        </div>
+
+        <h2>Application Details</h2>
+
+        <table class="settings-table">
+
+            <tr>
+                <td><strong>Application</strong></td>
+                <td>WeatherPro</td>
+            </tr>
+
+            <tr>
+                <td><strong>Version</strong></td>
+                <td>2.0</td>
+            </tr>
+
+            <tr>
+                <td><strong>Framework</strong></td>
+                <td>Flask</td>
+            </tr>
+
+            <tr>
+                <td><strong>Language</strong></td>
+                <td>Python</td>
+            </tr>
+
+            <tr>
+                <td><strong>Weather API</strong></td>
+                <td>Open-Meteo API</td>
+            </tr>
+
+            <tr>
+                <td><strong>Forecast</strong></td>
+                <td>7-Day + Hourly</td>
+            </tr>
+
+            <tr>
+                <td><strong>Favorites</strong></td>
+                <td>Flask Session</td>
+            </tr>
+
+            <tr>
+                <td><strong>History</strong></td>
+                <td>Flask Session</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div class="settings-card">
+
+        <div class="settings-icon">
+            ✨
+        </div>
+
+        <h2>Available Features</h2>
+
+        <div class="settings-features">
+
+            <div>🌤 Current Weather</div>
+            <div>📅 7-Day Forecast</div>
+            <div>🕒 Hourly Forecast</div>
+            <div>⭐ Favorite Cities</div>
+            <div>🕘 Search History</div>
+            <div>🌅 Sunrise & Sunset</div>
+            <div>💧 Humidity</div>
+            <div>🌬 Wind Speed</div>
+            <div>📱 Responsive Design</div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="developer-card">
+
+    <div class="developer-icon">
+
+        🚀
+
+    </div>
+
+    <h2>WeatherPro Status</h2>
+
+    <p>
+
+        Your WeatherPro application is configured and ready to provide
+        accurate weather forecasts with a clean, responsive interface.
+
+    </p>
+
+</div>
+
+{% endblock %}

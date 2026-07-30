@@ -1,0 +1,62 @@
+/* ============================================
+   WEATHER THEMES
+   ============================================ */
+
+body {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: background-image 0.8s ease-in-out;
+}
+
+/* ☀️ Sunny */body.sunny{
+    background:
+        linear-gradient(rgba(255,220,120,.08), rgba(255,255,255,.02)),
+        url("images/sunny.jpg");
+}
+
+body.cloudy{
+    background:
+        linear-gradient(rgba(80,95,120,.18), rgba(40,50,70,.20)),
+        url("images/cloudy.jpg");
+}
+
+body.rain{
+    background:
+        linear-gradient(rgba(25,45,70,.22), rgba(10,20,35,.28)),
+        url("images/rain.jpg");
+}
+
+body.storm{
+    background:
+        linear-gradient(rgba(10,15,30,.28), rgba(0,0,0,.35)),
+        url("images/storm.jpg");
+}
+
+body.snow{
+    background:
+        linear-gradient(rgba(255,255,255,.05), rgba(180,210,255,.10)),
+        url("images/snow.jpg");
+}
+
+body.fog{
+    background:
+        linear-gradient(rgba(180,180,180,.18), rgba(120,120,120,.22)),
+        url("images/fog.jpg");
+}
+
+body.night{
+    background:
+        linear-gradient(rgba(5,10,35,.18), rgba(0,0,0,.25)),
+        url("images/night.jpg");
+}
+/* Universal overlay (kept very light) */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.05);
+    pointer-events: none;
+    z-index: -1;
+}

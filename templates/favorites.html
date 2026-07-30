@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block title %}
+Favorite Cities | WeatherPro
+{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+
+    <h1>⭐ Favorite Cities</h1>
+
+    <p>
+        Quickly access your most searched locations.
+    </p>
+
+</div>
+
+{% if favorites %}
+
+<div class="favorites-grid">
+
+    {% for city in favorites %}
+
+    <div class="favorite-card">
+
+        <div class="favorite-icon">
+            📍
+        </div>
+
+        <h2>
+
+            {{ city }}
+
+        </h2>
+
+        <p>
+
+            Saved in your favorites list.
+
+        </p>
+
+        <div class="favorite-buttons">
+
+            <a
+                href="/?city={{ city }}"
+                class="primary-btn">
+
+                🌤 View Weather
+
+            </a>
+
+            <a
+                href="/favorite/remove/{{ city }}"
+                class="danger-btn">
+
+                🗑 Remove
+
+            </a>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% else %}
+
+<div class="empty-card">
+
+    <div class="error-icon">
+        ⭐
+    </div>
+
+    <h2>
+
+        No Favorite Cities
+
+    </h2>
+
+    <p>
+
+        Search a city from the Home page and add it to your favorites.
+
+    </p>
+
+    <br>
+
+    <a
+        href="{{ url_for('home') }}"
+        class="primary-btn">
+
+        🏠 Go Home
+
+    </a>
+
+</div>
+
+{% endif %}
+
+{% endblock %}

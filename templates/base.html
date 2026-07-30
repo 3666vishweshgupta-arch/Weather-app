@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}WeatherPro{% endblock %}</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='cards.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='animations.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='weather-themes.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='weather-effects.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='responsive.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/weather-themes.css') }}">
+
+</head>
+
+<body class="{{ weather.theme if weather else '' }}">
+
+<div class="background-overlay"></div>
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        🌤 <span>WeatherPro</span>
+
+    </div>
+
+    <ul>
+
+        <li><a href="{{ url_for('home') }}">🏠 Home</a></li>
+
+        <li><a href="{{ url_for('forecast') }}">📅 Forecast</a></li>
+
+        <li><a href="{{ url_for('hourly') }}">⏰ Hourly</a></li>
+
+        <li><a href="{{ url_for('favorites') }}">⭐ Favorites</a></li>
+
+        <li><a href="{{ url_for('history') }}">🕘 History</a></li>
+
+        <li><a href="{{ url_for('about') }}">ℹ About</a></li>
+
+        <li><a href="{{ url_for('settings') }}">⚙ Settings</a></li>
+
+    </ul>
+
+</nav>
+<main class="page-container">
+
+{% block content %}
+{% endblock %}
+
+</main>
+
+<footer class="footer">
+
+    <p>
+        WeatherPro • Built with Flask & Open-Meteo
+    </p>
+
+</footer>
+
+</body>
+</html>     

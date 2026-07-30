@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}
+Hourly Forecast | WeatherPro
+{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+
+    <h1>⏰ 24-Hour Forecast</h1>
+
+    <p>
+        Stay updated with the weather hour by hour.
+    </p>
+
+</div>
+
+{% if weather %}
+
+<div class="hourly-scroll">
+
+    {% for hour in weather.hourly %}
+
+    <div class="hour-card">
+
+        <div class="hour-time">
+
+            {{ hour.time }}
+
+        </div>
+
+        <div class="hour-icon">
+
+            {{ hour.icon }}
+
+        </div>
+
+        <h3>
+
+            {{ hour.condition }}
+
+        </h3>
+
+        <div class="hour-temp">
+
+            {{ hour.temperature }}°C
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+<div class="action-section">
+
+    <a href="{{ url_for('home') }}" class="primary-btn">
+
+        🏠 Home
+
+    </a>
+
+    <a href="{{ url_for('forecast') }}" class="secondary-btn">
+
+        📅 7-Day Forecast
+
+    </a>
+
+</div>
+
+{% else %}
+
+<div class="empty-card">
+
+    <h2>
+
+        🌤 No Hourly Forecast
+
+    </h2>
+
+    <p>
+
+        Search a city from the Home page first.
+
+    </p>
+
+    <br>
+
+    <a href="{{ url_for('home') }}" class="primary-btn">
+
+        Go Home
+
+    </a>
+
+</div>
+
+{% endif %}
+
+{% endblock %}
